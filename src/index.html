@@ -5,8 +5,720 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Capstone-Taiwind</title>
     <link rel="stylesheet" href="./css/output.css" />
+    <!-- <link rel="icon" href="../src/img/logo.png" type="image/x-icon"> -->
+
+    <!-- FontAweSome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Animate  -->
+    <link rel="stylesheet" href="./css/animate.css">
+    <!-- Slick  -->
+    <link rel="stylesheet" href="./js/slick.css">
   </head>
   <body>
-    <section class="some-faq"></section>
+    <header class="">
+      <div class="bg-[#ED125A] text-white py-3 hidden sm:block">
+        <div class="container justify-between flex flex-col lg:flex-row">
+          <div class="flex ">
+            <ul class="flex justify-between gap-8">
+              <li class="flex items-center ">
+                <a class="block" href="#">
+                  <i class="fa-solid fa-phone mr-4"></i>
+                <span>(629) 555-0129</span>
+                </a>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-envelope"></i>
+                <span>info@example.com</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>6391 Elgin St. Celina, 10299</span>
+              </li>
+            </ul>
+          </div>
+          <ul class="flex items-center justify-center mt-3 lg:mt-0">
+            <li><a class="block mr-3 text-center w-6 h-6 leading-6 border border-white border-opacity-20 bg-transparent text-xs rounded-md hover:bg-[#F7941E] transition-all duration-300" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a class="block mr-3 text-center w-6 h-6 leading-6 border border-white border-opacity-20 bg-transparent text-xs rounded-md hover:bg-[#F7941E] transition-all duration-300" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a class="block mr-3 text-center w-6 h-6 leading-6 border border-white border-opacity-20 bg-transparent text-xs rounded-md hover:bg-[#F7941E] transition-all duration-300" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a class="block mr-3 text-center w-6 h-6 leading-6 border border-white border-opacity-20 bg-transparent text-xs rounded-md hover:bg-[#F7941E] transition-all duration-300" href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="py-6 relative">
+        <div id="input-box" class="z-30 absolute inset-0 invisible opacity-0 flex items-center transition-all ease-in-out duration-500">
+          <input class="w-full h-full px-10 bg-white outline-none  border border-black border-opacity-35 rounded-md" placeholder="Search here" type="text">
+          <div id="xTicker" class="absolute right-[40px]">
+            <i class="fa-solid fa-xmark border-gray-400  text-xl"></i>
+          </div>
+        </div>
+        <div id="overlay" class="z-40 fixed inset-0 bg-black bg-opacity-30 hidden ">
+          
+        </div>
+        <div id="mobileMenu" class="font-jost fixed -right-full top-0 w-full z-50 max-w-md min-h-screen h-full bg-[#FEF0E4] p-8 transition-all ease-in-out duration-500 border-l-2 border-[#F7941E]">
+          <div class="flex justify-between items-center mb-6">
+            <div class="flex items-center cursor-pointer">
+              <img src="./img/logo.png" alt="">
+              <a href="#" class="font-bold text-3xl ml-1 block">Ascent</a>
+            </div>
+            <a id="offTicker" class="w-10 h-10 flex justify-center items-center  bg-[#F7941E]  text-white rounded-md cursor-pointer">
+              <i class="fa-solid fa-xmark text-xl"></i>
+            </a>
+          </div>
+          <ul>
+            <li class="">
+              <a class="flex justify-between border-b border-b-slate-300 pb-3">
+                <span class="cursor-pointer ">Home</span>
+                <i id="HomeExpandClose" class="fa-solid fa-plus  cursor-pointer"></i>
+              </a>
+              <div id="homeExpand" class="hidden opacity-0 transition-all ease-in-out duration-1000">
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Home-1</span>
+                </a>
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Home-2</span>
+                </a>
+              </div>
+            </li>
+            <li><a class="block py-3 border-b border-b-slate-300" href="#">About Us</a></li>
+            <li class="">
+              <a class="flex justify-between border-b border-b-slate-300 py-3">
+                <span class="cursor-pointer ">Services</span>
+                <i id="serviceExpandClose" class="fa-solid fa-plus cursor-pointer"></i>
+              </a>
+              <div id="serviceExpand" class="hidden opacity-0 transition-all ease-in-out duration-1000">
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Services</span>
+                </a>
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Services Detail</span>
+                </a>
+              </div>
+            </li>
+            <li class="">
+              <a class="flex justify-between border-b border-b-slate-300 py-3">
+                <span class="cursor-pointer ">Blog</span>
+                <i id="blogExpandClose" class="fa-solid fa-plus cursor-pointer"></i>
+              </a>
+              <div id="blogExpand" class="hidden opacity-0 transition-all ease-in-out duration-1000">
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Blog</span>
+                </a>
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Blog Detail</span>
+                </a>
+              </div>
+            </li>
+            <li class="">
+              <a class="flex justify-between border-b border-b-slate-300 py-3">
+                <span class="cursor-pointer ">Page</span>
+                <i id="pageExpandClose" class="fa-solid fa-plus cursor-pointer"></i>
+              </a>
+              <div id="pageExpand" class="hidden opacity-0 transition-all ease-in-out duration-1000">
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">About</span>
+                </a>
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Services</span>
+                </a>
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Services Detail</span>
+                </a>
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Portfolio</span>
+                </a>
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Faq's</span>
+                </a>
+                <a class="flex justify-between border-b border-b-slate-300 py-3 px-6">
+                  <span class="cursor-pointer">Contact</span>
+                </a>
+              </div>
+            </li>
+            <li><a class="block py-3 border-b border-b-slate-300" href="#">Contact</a></li>
+          </ul>
+          <div class="mt-5 text-xl font-bold text-[#385469]">Contact Info</div>
+          <div class="text-black text-opacity-60">
+            <a class="flex items-center my-4 cursor-pointer">
+              <i class="fa-solid fa-phone text-[#F7941E] mr-3"></i>
+              <span>(629) 555-0129</span>
+            </a>
+            <a class="flex items-center mb-4 cursor-pointer">
+              <i class="fa-solid fa-envelope text-[#F7941E] mr-3"></i>
+              <span>info@example.com</span>
+            </a>
+            <div class="flex items-center mb-4">
+              <i class="fa-solid fa-location-dot  text-[#F7941E] mr-3"></i>
+              <span>6391 Elgin St. Celina, 10299</span>
+            </div>
+          </div>
+          <div class="relative right-[15px] pt-3 pb-8  px-8 bg-[#F7941E] rounded-md z-10 w-full overflow-hidden cursor-pointer group text-white hidden sm:block ml-4 ">
+            <a class="absolute block w-full -translate-x-5 -translate-y-1 text-center rounded-xl z-30 cursor-pointer" href="#">Get A Quote <i class="fa-solid fa-arrow-right ml-1"></i></a>
+            <span class="absolute inset-0 bg-[#73BE48] z-20 transform translate-x-[-100%] group-hover:translate-x-0  transition-all duration-300"></span>
+          </div>
+          <ul class="flex  mt-6">
+            <li><a class="flex justify-center items-center  w-11 h-11  text-center bg-white hover:bg-[#F7941E] rounded-lg transition-all duration-300 mr-4" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a class="flex justify-center items-center  w-11 h-11  text-center bg-white hover:bg-[#F7941E] rounded-lg transition-all duration-300 mr-4" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a class="flex justify-center items-center  w-11 h-11  text-center bg-white hover:bg-[#F7941E] rounded-lg transition-all duration-300 mr-4" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a class="flex justify-center items-center  w-11 h-11  text-center bg-white hover:bg-[#F7941E] rounded-lg transition-all duration-300 mr-4" href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+          </ul>
+        </div>
+        <div class="container">
+          <div class="flex items-center justify-between">
+            <div class="logo">
+              <a class="flex items-center text-3xl font-bold" href="#">
+                <img src="./img/logo.png" alt="">
+                <span>Ascent</span>
+              </a>
+            </div>
+            <div class="block__right flex items-center">
+              <div class="hidden xl:block">
+                <ul class="nav__left flex items-center gap-8 mr-16 font-bold font-jost text-lg">
+                  <li class="group relative">
+                    <a class="group-hover:text-[#F7941E] transition-all duration-300" href="#">Home <i class="fa-solid fa-angle-down text-sm"></i></a>
+                    <ul class="absolute top-full min-w-56 shadow-custom z-10 opacity-0 invisible text-xs translate-y-5 group-hover:opacity-100 group-hover:visible  group-hover:translate-y-0 transition-all duration-500 bg-white">
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500 border-b border-b-slate-300" href="#">Home-1</a></li>
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all" href="#">Home-2</a></li>
+                    </ul>
+                  </li>
+                  <li class="group"><a href="#">About Us</a></li>
+                  <li class="group relative">
+                    <a href="#">Services <i class="fa-solid fa-angle-down text-sm"></i></a>
+                    <ul class="absolute top-full min-w-56 shadow-custom z-10 opacity-0 invisible text-xs translate-y-5 group-hover:opacity-100 group-hover:visible  group-hover:translate-y-0 transition-all duration-500 bg-white">
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500 border-b border-b-slate-300" href="#">Services</a></li>
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500" href="#">Services Details</a></li>
+                    </ul>
+                  </li>
+                  <li class="group relative">
+                    <a href="#">Blog <i class="fa-solid fa-angle-down text-sm"></i></a>
+                    <ul class="absolute top-full min-w-56 shadow-custom z-10 opacity-0 invisible text-xs translate-y-5 group-hover:opacity-100 group-hover:visible  group-hover:translate-y-0 transition-all duration-500 bg-white">
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500 border-b border-b-slate-300" href="#">Blog</a></li>
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500" href="#">Blog Details</a></li>
+                    </ul>
+                  </li>
+                  <li class="group relative">
+                    <a href="#">Page <i class="fa-solid fa-angle-down text-sm"></i></a>
+                    <ul class="absolute top-full min-w-56 shadow-custom z-10 opacity-0 invisible text-xs translate-y-5 group-hover:opacity-100 group-hover:visible  group-hover:translate-y-0 transition-all duration-500 bg-white">
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500 border-b border-b-slate-300" href="#">About</a></li>
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500 border-b border-b-slate-300" href="#">Services</a></li>
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500 border-b border-b-slate-300" href="#">Services Details</a></li>
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500 border-b border-b-slate-300" href="#">Faq</a></li>
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500 border-b border-b-slate-300" href="#">Portfolio</a></li>
+                      <li><a class="block px-2 py-3 text-base hover:text-white hover:bg-[#F7941E] transition-all duration-500" href="#">Contact</a></li>
+                    </ul>
+                  </li>
+                  <li class="group"><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="menu__right flex items-center gap-6">
+                <div id="searchElement">
+                  <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+                </div>
+                <div class="relative right-[15px] pt-5 pb-10  px-8 bg-[#1CBBB4] rounded-xl z-10 w-[180px] h-[64px] md:h-[64px] overflow-hidden cursor-pointer group text-white hidden sm:block ml-4 ">
+                  <a class="absolute rounded-xl h-[64px]   z-30 cursor-pointer" href="#">Get A Quote <i class="fa-solid fa-arrow-right ml-2 mr-3"></i></a>
+                  <span class="absolute inset-0 bg-[#73BE48] z-20 transform translate-x-[-100%] group-hover:translate-x-0  transition-all duration-300"></span>
+                </div>
+                <div id="menuTicker" class="block xl:hidden text-3xl text-black opacity-70">
+                  <a href="#"><i class="fa fa-bars"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="some-faq">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 item-center gap-7 mt-10">
+          <div class="left__content mx-auto max-w-custom">
+            <img src="./img/left-img.png" alt="" />
+          </div>
+          <div class="right__content ">
+            <p class="text-main font-bubblegum text-xl wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">Some Faq</p>
+            <h2 class="font-bold text-2xl lg:text-3xl font-jost pb-10 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+              Empowering Children Through Education Playful Mind
+            </h2>
+            <div class="border-2 rounded-md border-black border-opacity-10 p-5">
+              <div class="flex justify-between">
+                <div class="font-bold text-base lg:text-xl">
+                  Why do we have to go to school?
+                </div>
+                <span
+                  class="block w-8 h-8 leading-8 text-center rounded-md cursor-pointer bg-main text-white"
+                >
+                  <i class="fa-solid fa-minus"></i>
+                </span>
+              </div>
+              <div>
+                <p class="text-black opacity-60">
+                  It is a long established fact that a reader will be distracted
+                  by the read content of a page when looking at its layout. Many
+                  desktop publish packages and web page editors now use
+                  Loremdefault model
+                </p>
+              </div>
+            </div>
+            <div
+              class="border-2 rounded-md border-black border-opacity-10 p-5 mt-8"
+            >
+              <div class="flex justify-between">
+                <div class="font-bold text-xl lg:text-xl">
+                  Why do we have to go to school?
+                </div>
+                <span
+                  class="block w-8 h-8 leading-8 text-center rounded-md cursor-pointer bg-orange text-white"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+              </div>
+            </div>
+            <div
+              class="border-2 rounded-md border-black border-opacity-10 p-5 mt-8"
+            >
+              <div class="flex justify-between">
+                <div class="font-bold text-base lg:text-xl">
+                  Why do we have to go to school?
+                </div>
+                <span
+                  class="block w-8 h-8 leading-8 text-center rounded-md cursor-pointer bg-orange text-white"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="professional pt-20">
+      <div class="container">
+        <p class="text-main font-bubblegum text-xl text-center wow fadeInUp"  style="visibility: visible; animation-name: fadeInUp;">
+          Meet Our Professional
+        </p>
+        <h2 class="font-bold text-2xl lg:text-3xl font-jost pb-10 text-center wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+          Joyful Journeys Childcare and the <br />
+          Of a Education
+        </h2>
+        <div class="professional__content grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 ">
+          <div class="professional__item group shadow-2xl border-transparent p-8 lg:p-12 border-2  mx-auto hover:border-green-500 rounded-tr-xl rounded-tl-custom-5xl rounded-br-custom-5xl transition duration-500 ease-in-out">
+            <div >
+              <img class=" max-w-custom240 rounded-tr-xl rounded-tl-custom-5xl rounded-br-custom-5xl rounded-bl-xl group-hover:rounded-tr-custom-5xl group-hover:rounded-bl-custom-5xl group-hover:rounded-tl-xl group-hover:rounded-br-xl transition-all duration-500 ease-in-out" src="./img/professonal1.png" alt="" />
+            </div>
+            <div class="pt-8 pb-7">
+              <h3 class="text-2xl font-bold">Jane Cooper</h3>
+              <p class="pt-1 opacity-70 text-black">Marketing Coordinator</p>
+            </div>
+            <ul class="flex justify-start text-base">
+              <li class="">
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out" href="#"><i class="fa-brands fa-facebook-f "></i></a>
+              </li>
+              <li>
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out"  href="#"><i class="fa-brands fa-x-twitter "></i></a>
+              </li>
+              <li>
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out"  href="#"><i class="fa-brands fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out"  href="#"><i class="fa-brands fa-pinterest-p "></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="professional__item group shadow-2xl border-transparent  p-8 lg:p-12 border-2 mx-auto hover:border-green-500 rounded-tr-xl rounded-tl-custom-5xl rounded-br-custom-5xl transition duration-500 ease-in-out">
+            <div >
+              <img class=" max-w-custom240 rounded-tr-xl rounded-tl-custom-5xl rounded-br-custom-5xl rounded-bl-xl group-hover:rounded-tr-custom-5xl group-hover:rounded-bl-custom-5xl group-hover:rounded-tl-xl group-hover:rounded-br-xl transition-all duration-500 ease-in-out" src="./img/professonal2.png" alt="" />
+            </div>
+            <div class="pt-8 pb-7">
+              <h3 class="text-2xl font-bold">Jane Cooper</h3>
+              <p class="pt-1 opacity-70 text-black">Marketing Coordinator</p>
+            </div>
+            <ul class="flex justify-start text-base">
+              <li class="">
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out" href="#"><i class="fa-brands fa-facebook-f "></i></a>
+              </li>
+              <li>
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out"  href="#"><i class="fa-brands fa-x-twitter "></i></a>
+              </li>
+              <li>
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out"  href="#"><i class="fa-brands fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out"  href="#"><i class="fa-brands fa-pinterest-p "></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="professional__item group shadow-2xl border-transparent  p-8 lg:p-12  border-2 mx-auto hover:border-green-500 rounded-tr-xl rounded-tl-custom-5xl rounded-br-custom-5xl transition duration-500 ease-in-out">
+            <div >
+              <img class=" max-w-custom240 rounded-tr-xl rounded-tl-custom-5xl rounded-br-custom-5xl rounded-bl-xl group-hover:rounded-tr-custom-5xl group-hover:rounded-bl-custom-5xl group-hover:rounded-tl-xl group-hover:rounded-br-xl transition-all duration-500 ease-in-out" src="./img/professonal3.png" alt="" />
+            </div>
+            <div class="pt-8 pb-7">
+              <h3 class="text-2xl font-bold">Jane Cooper</h3>
+              <p class="pt-1 opacity-70 text-black">Marketing Coordinator</p>
+            </div>
+            <ul class="flex justify-start text-base">
+              <li class="">
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out" href="#"><i class="fa-brands fa-facebook-f "></i></a>
+              </li>
+              <li>
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out"  href="#"><i class="fa-brands fa-x-twitter "></i></a>
+              </li>
+              <li>
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out"  href="#"><i class="fa-brands fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a class="block w-9 h-19 leading-9 text-center hover:bg-hong rounded-md bg-cam hover:text-white mr-4 transition-all duration-500 ease-in-out"  href="#"><i class="fa-brands fa-pinterest-p "></i></a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </section>
+    <section class="knowledge bg-camnhat relative mt-20">
+      <div class="container">
+        <div class="knowledge__content grid lg:grid-cols-[37%_auto] grid-cols-1 items-center xl:gap-20 gap-10">
+          <div class="topleft__content relative z-10 mt-20 pt-20 ">
+            <p class="text-main font-bubblegum text-xl wow fadeInUp"  style="visibility: visible; animation-name: fadeInUp;">Student knowledge</p>
+            <h2 class="font-bold text-2xl lg:text-3xl font-jost pb-10 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Knowledge for All learn design Excellence for Everyone
+            </h2>
+            <p class="text-black opacity-60 wow fadeInUp" data-wow-delay="0.4s"  style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Lorem ipsum dolor sit amet consectetur adipiscing elit platea the osr of a proin mollis pretium facilisi in, ligula volutpat
+            </p>
+            <a class="inline-block rounded-full px-8 py-3 bg-do mt-5 mb-4 text-white border hover:text-do hover:bg-white hover:border-do"  href="">Learn More</a>           
+          </div>
+
+          <div class="bottomright__content lg:mt-20 text-white pb-20 ">
+            <div class="relative  flex justify-center flex-wrap sm:flex-nowrap lg:justify-between md:gap-8 sm:gap-4 gap-3">
+              <div class="mt-[110px] flex flex-col items-end md:gap-8 sm:gap-4 gap-3">
+                <div class="bg-[#0A6375] rounded-[10px] xl:py-20 lg:py-10 py-7 xl:px-[85px] lg:px-10 md:px-6 px-5 lg:max-w-[300px] max-w-[190px] max-h-[300px] ">
+                  <h5 class="font-nunito text-cream-foreground lg:text-[32px] md:text-2xl text-xl font-bold leading-[140%] text-center lg:max-w-[111px] md:max-w-25 max-w-20">
+                    <span>1-2</span>
+                    <span>Years</span>
+                  </h5>
+                </div>
+                <div class="bg-[#F7941E] rounded-[10px] xl:py-[53px] lg:py-9 py-7 xl:px-10 lg:px-8 md:px-6 px-5 max-w-[190px] max-h-[190px]">
+                  <h5 class="font-nunito text-cream-foreground lg:text-[32px] md:text-2xl text-xl font-bold leading-[130%] text-center lg:max-w-[111px] md:max-w-25 max-w-20">
+                    <span>9-11</span>
+                    <span>Years</span>
+                  </h5>
+                </div>
+              </div>
+              <div class="flex flex-col md:gap-8 sm:gap-4 gap-3">
+                <div class="bg-[#1CBBB4] rounded-[10px] xl:py-[53px] lg:py-9 py-7 xl:px-10 lg:px-8 md:px-6 px-5 max-w-[190px] max-h-[190px]">
+                  <h5 class="font-nunito text-cream-foreground lg:text-[32px] md:text-2xl text-xl font-bold leading-[130%] text-center lg:max-w-[111px] md:max-w-25 max-w-20">
+                    <span>3-5</span>
+                    <span>Years</span>
+                  </h5>
+                </div>
+                <div class="bg-[#ED145B] rounded-[10px] xl:py-[53px] lg:py-9 py-7 xl:px-10 lg:px-8 md:px-6 px-5 max-w-[190px] max-h-[190px] ">
+                  <h5 class="font-nunito text-cream-foreground lg:text-[32px] md:text-2xl text-xl font-bold leading-[130%] text-center lg:max-w-[111px] md:max-w-25 max-w-20">
+                    <span>6-8</span>
+                    <span>Years</span>
+                  </h5>
+                </div>
+                <div class=" bg-[#73BE48] rounded-[10px] xl:py-[53px] lg:py-9 py-7 xl:px-10 lg:px-8 md:px-6 px-5 max-w-[190px] max-h-[190px]">
+                  <h5 class="font-nunito text-cream-foreground lg:text-[32px] md:text-2xl text-xl font-bold leading-[130%] text-center lg:max-w-[111px] md:max-w-25 max-w-20">
+                    <span>16-18</span>
+                    <span>Years</span>
+                  </h5>
+                </div>
+              </div>
+              <div class="self-center ">
+                <div class="bg-[#F7941E] rounded-[10px] xl:py-[53px] lg:py-9 py-7 xl:px-10 lg:px-8 md:px-6 px-5 max-w-[190px] max-h-[190px]">
+                  <h5 class="font-nunito text-cream-foreground lg:text-[32px] md:text-2xl text-xl font-bold leading-[130%] text-center lg:max-w-[111px] md:max-w-25 max-w-20">
+                    <span>12-15</span>
+                    <span>Years</span>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tree hidden xl:block">
+        <img src="./img/knowledge-lshpe.png" alt="">
+      </div>
+      <div class="absolute 2xl:top-[120px] lg:top-16 top-20 right-[67px] 2xl:w-auto lg:w-48 w-32 animate-turtle">
+        <img src="./img/knowledge-animal.png" alt="">
+      </div>
+    </section>
+    <section class="testimonial pt-20 pb-10">
+      <div class="container">
+        <div class="top__content flex flex-col lg:flex-row justify-between">
+          <div class="lg:max-w-[410px]">
+            <p class="text-main font-bubblegum text-xl wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">Clients Testimonial
+            </p>
+            <h2 class="font-bold text-2xl lg:text-3xl font-jost pb-10  wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Unlocking the Power of <br> Wonderworks Child
+            </h2>
+          </div>
+          <p class="lg:max-w-[410px]">Use receiving accounts a number a currencies and get paid like a local Use receivin accounts a number paid the most beautiful think</p>
+        </div>
+        <div class="bottom__content relative">
+          <div class="">
+            <img src="./img/bg-img.png" alt="" class="min-h-[360px]">
+          </div>
+          <div class=" absolute top-1/2 right-0 -translate-y-1/2 w-full max-w-[630px] min-w-[320px] min-h-[280px]">
+            <div class="your-class  bg-white shadow lg:pb-10 lg:pt-10 sm:pt-1 sm:pb-1 pt-4 pb-4  rounded-xl">
+              <div class="p-4 lg:p-8">
+                <div class="flex justify-between">
+                  <div class="flex items-center">
+                    <img src="./img/user-1.png" alt="" class="mr-4 ">
+                    <div>
+                      <h3 class="text-2xl font-bold">Shakib Al Hasan</h3>
+                      <p class="text-black opacity-60">Marketing Manager</p>
+                    </div>
+                  </div>
+                  <div>
+                    <img src="./img/quotation.png" alt="">
+                  </div>
+                </div>
+                <div class="mt-10 sm:mt-2">
+                  <p class="text-black opacity-60">Their product exceeded his my routi  expectations. The the quality and attention to detail a the a most outstanding and it has become an essential most a education the man who can do </p>
+                  <ul class="flex mt-10">
+                    <li><i class="fa-solid fa-star text-orange  text-xl mr-1"></i></li>
+                    <li><i class="fa-solid fa-star text-orange text-xl mr-1"></i></li>
+                    <li><i class="fa-solid fa-star text-orange text-xl mr-1"></i></li>
+                    <li><i class="fa-solid fa-star text-orange text-xl mr-1"></i></li>
+                    <li><i class="fa-regular fa-star text-black opacity-20 text-xl mr-1"></i></li>
+                  </ul>
+                </div>
+              </div>    
+              <div class="p-4 lg:p-8">
+                <div class="flex justify-between">
+                  <div class="flex items-center">
+                    <img src="./img/user-1.png" alt="" class="mr-4">
+                    <div>
+                      <h3 class="text-2xl font-bold">Shakib Al Hasan</h3>
+                      <p class="text-black opacity-60">Marketing Manager</p>
+                    </div>
+                  </div>
+                  <div>
+                    <img src="./img/quotation.png" alt="">
+                  </div>
+                </div>
+                <div class="mt-10 sm:mt-2">
+                  <p class="text-black opacity-60">Their product exceeded his my routi  expectations. The the quality and attention to detail a the a most outstanding and it has become an essential most a education the man who can do </p>
+                  <ul class="flex mt-10">
+                    <li><i class="fa-solid fa-star text-orange  text-xl mr-1"></i></li>
+                    <li><i class="fa-solid fa-star text-orange text-xl mr-1"></i></li>
+                    <li><i class="fa-solid fa-star text-orange text-xl mr-1"></i></li>
+                    <li><i class="fa-solid fa-star text-orange text-xl mr-1"></i></li>
+                    <li><i class="fa-regular fa-star text-black opacity-20 text-xl mr-1"></i></li>
+                  </ul>
+                </div>
+              </div>      
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </section>
+    <section class="blog pt-20  bg-gradient-to-b from-[#FEEFE5] to-[#FFFDFC]">
+      <div class="container">
+        <div class="blog__title">
+          <p class="text-main font-bubblegum text-xl  wow fadeInUp"  style="visibility: visible; animation-name: fadeInUp;">
+            Latest Blog And News
+  
+  
+          </p>
+          <h2 class="font-bold text-2xl lg:text-3xl font-jost pb-10  wow fadeInUp"  style="visibility: visible; animation-name: fadeInUp;">
+            Wonderworks Child Development Center <br> Discovery Kids Preschool
+          </h2>
+        </div>
+        <div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <div class="flex wow fadeInUp p-2 bg-white rounded-xl shadow-sm" data-wow-delay="0.3s"  style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <img class="mr-2" src="./img/blog-1.png" alt="">
+                <div class="p-2 ">
+                  <div class="flex ">
+                    <div class="flex items-baseline pr-4">
+                      <i class="fa-regular fa-calendar-days text-secondary-foreground mr-1 inline-block text-main"></i>
+                      <p class="text-xs">October 19, 2023</p>
+                    </div>
+                    <div class="flex items-baseline">
+                      <i class="fa-regular fa-user text-secondary-foreground mr-1 inline-block text-main"></i>
+                      <p class="text-xs">By admin
+                      </p>
+                    </div>
+                  </div>
+                  <h3 class="mt-5 mb-5">
+                    <a class="md:text-2xl text-xl md:leading-[141%] leading-[120%] font-bold hover:text-main transition-all duration-500" href="#">Empowering Children Through Education the a Igniting</a>
+                  </h3>
+                  <div class="flex items-baseline group transition-all duration-300 cursor-pointer">
+                    <span class="font-normal mr-3 group-hover:text-main">Read More</span>
+                    <i class="fa fa-arrow-right group-hover:text-main group-hover:translate-x-[3px] transition-all duration-300"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="flex wow fadeInUp p-2 bg-white rounded-xl mt-8 shadow-sm" data-wow-delay="0.3s"  style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <img class="mr-2" src="./img/blog-2.png" alt="">
+                <div class="p-2 ">
+                  <div class="flex ">
+                    <div class="flex items-baseline pr-4">
+                      <i class="fa-regular fa-calendar-days text-secondary-foreground mr-1 inline-block text-main"></i>
+                      <p class="text-xs">October 19, 2023</p>
+                    </div>
+                    <div class="flex items-baseline">
+                      <i class="fa-regular fa-user text-secondary-foreground mr-1 inline-block text-main"></i>
+                      <p class="text-xs">By admin
+                      </p>
+                    </div>
+                  </div>
+                  <h3 class="mt-5 mb-5">
+                    <a class="md:text-2xl text-xl md:leading-[141%] leading-[120%] font-bold hover:text-main transition-all duration-500" href="#">Empowering Children Through Education the a Igniting</a>
+                  </h3>
+                  <div class="flex items-baseline group transition-all duration-300 cursor-pointer">
+                    <span class="font-normal mr-3 group-hover:text-main">Read More</span>
+                    <i class="fa fa-arrow-right group-hover:text-main group-hover:translate-x-[3px] transition-all duration-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex flex-col items-start  h-full shadow-sm wow fadeInUp p-2 bg-white rounded-xl" data-wow-delay="0.5s"  style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <img class="w-full" src="./img/blog-3.png" alt="">
+                <div class="p-2 ">
+                  <div class="flex ">
+                    <div class="flex items-baseline pr-4">
+                      <i class="fa-regular fa-calendar-days text-secondary-foreground mr-1 inline-block text-main"></i>
+                      <p class="text-xs">October 19, 2023</p>
+                    </div>
+                    <div class="flex items-baseline">
+                      <i class="fa-regular fa-user text-secondary-foreground mr-1 inline-block text-main"></i>
+                      <p class="text-xs">By admin
+                      </p>
+                    </div>
+                  </div>
+                  <h3 class="mt-5 mb-5">
+                    <a class="md:text-2xl text-xl md:leading-[141%] leading-[120%] font-bold hover:text-main transition-all duration-500" href="#">Empowering Children Through Education the a Igniting</a>
+                  </h3>
+                  <div class="flex items-baseline group transition-all duration-300 cursor-pointer">
+                    <span class="font-normal mr-3 group-hover:text-main">Read More</span>
+                    <i class="fa fa-arrow-right group-hover:text-main group-hover:translate-x-[3px] transition-all duration-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="connected bg-gradient-to-b from-white to-[#E9FFB6] mt-10">
+      <div class="bg-[url('../img/bg-img-connected.png')] bg-contain bg-no-repeat bg-bottom">
+        <div class="container">
+          <div class="flex lg:flex-row flex-col lg:items-center justify-between gap-8">
+            
+            <div class="right__top lg:max-w-[530px] order-1 lg:order-2">
+              <p class="font-bubblegum text-xl  wow fadeInUp"  style="visibility: visible; animation-name: fadeInUp;">
+                Get Connected
+              </p>
+              <h2 class="font-bold text-2xl lg:text-3xl font-jost pb-10  wow fadeInUp"  style="visibility: visible; animation-name: fadeInUp;">
+                Education That Sparks Imaginat Nurturing Curiosity Inspire
+              </h2>
+              <div class="relative text-white ">
+                <input class="w-full  mx-auto p-7 rounded-lg border border-black outline-none text-black" placeholder="Enter Your Email" type="text">
+                
+                <div class="absolute top-1/2 right-[15px] -translate-y-1/2 py-5 px-8 bg-[#F7941E] rounded-xl z-10 w-[140px] h-[64px] overflow-hidden cursor-pointer group">
+                  <span class="absolute rounded-xl max-h-[64px] z-30 cursor-pointer">Submit<i class="fa-solid fa-arrow-right ml-2"></i></span>  
+                  <span class="absolute inset-0 bg-[#1CBBB4] z-20 transform translate-x-[-100%] group-hover:translate-x-0  transition-all duration-300"></span>
+                </div>
+              </div>
+            </div>
+            <div class=" left__bottom lg:max-w-[600px] w-full order-2 lg:order-1 animate-toRight">
+              <div class="bg-[url('../img/egg-shap.png')] bg-no-repeat bg-bottom bg-contain max-w-[600px] w-full">
+                <img class="text-center mx-auto" src="./img/student.png" alt="">
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer mt-20 mb-10">
+      <div class="container">
+        <div class="grid lg:grid-cols-[370px_auto_auto] sm:grid-cols-2 grid-cols-1 justify-between gap-7.5">
+          <div class="ascent wow fadeInUp mb-10 lg:mb-20" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+            <div class="flex items-center mb-4">
+              <img src="./img/logo.png" alt="">
+              <h3 class="font-bold text-3xl">Ascent</h3>
+            </div>
+            <p class="text-black opacity-60 pb-8">Yes, there are many notable ma corporate the a od businesses Informati worldwide</p>
+            <ul class="flex">
+              <li><a class="block mr-4 w-9 h-9 leading-9 bg-[#FEF0E4] text-center rounded-md hover:text-white hover:bg-[#73BE48] transition-all duration-500" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li><a class="block mr-4 w-9 h-9 leading-9 bg-[#FEF0E4] text-center rounded-md hover:text-white hover:bg-[#73BE48] transition-all duration-500" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li><a class="block mr-4 w-9 h-9 leading-9 bg-[#FEF0E4] text-center rounded-md hover:text-white hover:bg-[#73BE48] transition-all duration-500" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+              <li><a class="block mr-4 w-9 h-9 leading-9 bg-[#FEF0E4] text-center rounded-md hover:text-white hover:bg-[#73BE48] transition-all duration-500" href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+            </ul>
+          </div>
+          <div class="page wow fadeInUp mb-10 lg:mb-20" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+            <h3 class="font-bold text-2xl mb-5">Pages</h3>
+            <ul class="flex flex-col gap-[15px] text-black opacity-60">
+              <li class="hover:translate-x-[3px] transition-all duration-300 hover:text-[#F7941E]" ><a href="#">About Us</a></li>
+              <li class="hover:translate-x-[3px] transition-all duration-300 hover:text-[#F7941E]"><a href="#">Latest Service</a></li>
+              <li class="hover:translate-x-[3px] transition-all duration-300 hover:text-[#F7941E]"><a href="#">Latest Blog And News</a></li>
+              <li class="hover:translate-x-[3px] transition-all duration-300 hover:text-[#F7941E]"><a href="#">FAQ</a></li>
+              <li class="hover:translate-x-[3px] transition-all duration-300 hover:text-[#F7941E]"><a href="#">Our Creative Team Member</a></li>
+            </ul>
+          </div>
+          <div class="contact wow fadeInUp mb-10 lg:mb-20" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+            <h3 class="font-bold text-2xl mb-5">Contact</h3>
+            <ul class="text-black opacity-60">
+              <li class="flex items-center">
+                <span class="block border rounded-full border-[#686868] w-9 h-9 leading-9 text-center mr-3">
+                  <i class="fa-solid fa-location-dot text-[#73BE48]"></i>
+                </span>
+                <span>
+                  1179 KFC Road, <br> Lisbon, Portugal
+                </span>
+              </li>
+              <li class="flex items-center mt-5">
+                <span class="block border rounded-full border-[#686868] w-9 h-9 leading-9 text-center mr-3">
+                  <i class="fa-solid fa-envelope text-[#73BE48]"></i>
+                </span>
+                <span>
+                  <a href="#">Sakib23@gmail.com</a>
+                </span>
+              </li>
+              <li class="flex items-center mt-5">
+                <span class="block border rounded-full border-[#686868] w-9 h-9 leading-9 text-center mr-3">
+                  <i class="fa-solid fa-phone text-[#73BE48]"></i>
+                </span>
+                <span>
+                  <a href="#">012547892354</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex items-center justify-center xl:justify-end mr-8 mb-8"><a class="js-cd-top flex items-center justify-center w-12 h-12 leading-12 bg-[#F7941E] text-white rounded-full" href="#"><i class="fa-solid fa-arrow-up"></i></a></div>
+      <div class="flex justify-between">
+        <p class="text-black opacity-60 ">© Yoursitename 2024 | All Rights Reserved</p>
+        <ul class="flex gap-6">
+          <li class="cursor-pointer"><a href="#"></a>Terms & Condition</li>
+          <li class="cursor-pointer"><a href="#"></a>Privacy Policy
+          <li class="cursor-pointer"><a href="#"></a>Contact Us</li>
+        </ul>
+      </div>
+    </div>
+
+    </footer>
+    <!-- BacktoTop  -->
+    <script src="../src/js/util.js"></script>
+    <script src="../src/js/backToTop.js"></script>
+    
+    <!-- Jquery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Wowjs  -->
+    <script type="text/javascript" src="./js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Slick  -->
+    <script src="./js/slick.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
